@@ -5,7 +5,9 @@ function Header() {
     <header className={`mw ${styles.hd}`}>
       <nav>
         <h1>
-          <a href="/">Home</a>
+          <a href="/sub1">
+            <img src="/logo.svg" alt="SHOPPE" />
+          </a>
         </h1>
 
         <ul>
