@@ -1,8 +1,7 @@
 .hd nav {
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
-  height: 4.2rem;
   padding-top: 4rem;
 }
 
@@ -11,11 +10,19 @@
   width: auto;
 }
 
-.hd nav > ul {
+.hd nav > div {
   display: flex;
   align-items: center;
+  gap: 4rem;
 }
 
-.hd nav > ul:first-of-type > li {
-  width: 10rem;
+.hd nav > div a,
+.hd nav > div span {
+  display: block;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.hd .active {
+  border-bottom: 2px solid black;
 }

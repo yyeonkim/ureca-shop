@@ -1,0 +1,13 @@
+/* Swiper */
+/* swiper buttons */
+.swiper > div:nth-of-type(2),
+.swiper > div:nth-of-type(3) {
+  display: none;
+}
+
+/* swiper-slide */
+.swiper > div:first-of-type > div {
+  aspect-ratio: 1248 / 646;
+  border-radius: 1.6rem;
+  overflow: hidden;
+}

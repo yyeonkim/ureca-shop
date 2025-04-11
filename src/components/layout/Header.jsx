@@ -1,31 +1,30 @@
 import styles from "@/styles/Header.module.css";
+import { NavLink } from "react-router";
 
 function Header() {
   return (
     <header className={`mw ${styles.hd}`}>
       <nav>
         <h1>
-          <a href="/sub1">
+          <NavLink to="/">
             <img src="/logo.svg" alt="SHOPPE" />
-          </a>
+          </NavLink>
         </h1>
 
-        <ul>
-          <li>
-            <a href="/about">About</a>
-          </li>
-          <li>
-            <a href="/shop">Shop</a>
-          </li>
-          <li>
-            <a href="/blog">Blog</a>
-          </li>
-        </ul>
-
-        <ul>
-          <li>장바구니</li>
-          <li>마이페이지</li>
-        </ul>
+        <div>
+          <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/shop">
+            Shop
+          </NavLink>
+          <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/blog">
+            Blog
+          </NavLink>
+          <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/about">
+            Our Story
+          </NavLink>
+          <span>|</span>
+          <NavLink>장바구니</NavLink>
+          <NavLink>마이페이지</NavLink>
+        </div>
       </nav>
     </header>
   );
