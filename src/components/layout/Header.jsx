@@ -1,4 +1,5 @@
 import styles from "@/styles/Header.module.css";
+import { Search, ShoppingCart, User } from "lucide-react";
 import { NavLink } from "react-router";
 
 function Header() {
@@ -22,8 +23,15 @@ function Header() {
             Our Story
           </NavLink>
           <span>|</span>
-          <NavLink>장바구니</NavLink>
-          <NavLink>마이페이지</NavLink>
+          <NavLink to="#">
+            <Search size={20} />
+          </NavLink>
+          <NavLink to="#">
+            <ShoppingCart size={20} />
+          </NavLink>
+          <NavLink to="#">
+            <User size={20} />
+          </NavLink>
         </div>
       </nav>
     </header>

@@ -2,6 +2,17 @@ import styles from "@/styles/Main.module.css";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+const slideImgs = [
+  {
+    src: "/slides/slide1.jpg",
+    alt: "Gold big hoops",
+  },
+  {
+    src: "/slides/slide2.jpg",
+    alt: "Fast fashion, and faster fashion",
+  },
+];
+
 export default function MainPage() {
   return (
     <div className={styles.main}>
@@ -19,12 +30,11 @@ export default function MainPage() {
         modules={[Autoplay, Pagination, Navigation]}
         className={styles.swiper}
       >
-        <SwiperSlide>
-          <img src="/slides/slide1.jpg" alt="Gold big hoops" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/slides/slide2.jpg" alt="Fast fashion, and faster fashion" />
-        </SwiperSlide>
+        {slideImgs.map((slide) => (
+          <SwiperSlide>
+            <img src={slide.src} alt={slide.alt} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

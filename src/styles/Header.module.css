@@ -1,12 +1,13 @@
 .hd nav {
   display: flex;
-
+  align-items: center;
   justify-content: space-between;
   padding-top: 4rem;
+  padding-bottom: 2rem;
 }
 
 .hd nav h1 img {
-  height: 3.6rem;
+  height: 3rem;
   width: auto;
 }
 
@@ -16,11 +17,14 @@
   gap: 4rem;
 }
 
-.hd nav > div a,
 .hd nav > div span {
-  display: block;
-  padding-bottom: 2rem;
-  padding-top: 1rem;
+  color: #707070;
+}
+
+/* NavLink */
+.hd nav > div a {
+  display: flex;
+  align-items: center;
 }
 
 .hd .active {
