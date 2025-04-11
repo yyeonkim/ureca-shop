@@ -25,3 +25,9 @@ button {
   background-color: transparent;
   border: none;
 }
+
+.mw {
+  max-width: 1440px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}

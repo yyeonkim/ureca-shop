@@ -1,0 +1,14 @@
+.hd nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hd nav > ul {
+  display: flex;
+  align-items: center;
+}
+
+.hd nav > ul:first-of-type > li {
+  width: 10rem;
+}
