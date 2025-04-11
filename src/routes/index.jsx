@@ -1,8 +1,9 @@
+import Layout from "@/components/layout/index.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Layout from "../components/layout/index.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import BlogPage from "./pages/BlogPage.jsx";
 import MainPage from "./pages/MainPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 import ShopPage from "./pages/ShopPage.jsx";
 
 const router = createBrowserRouter([
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+  { path: "*", element: <NotFoundPage /> },
 ]);
 
 export default function Router() {
