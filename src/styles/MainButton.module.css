@@ -1,0 +1,14 @@
+.mainButton {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: white;
+  border: 2px solid white;
+  border-radius: 0.8rem;
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+
+.mainButton:hover {
+  background-color: white;
+  color: black;
+}
