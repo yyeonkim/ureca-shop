@@ -31,7 +31,7 @@ function Header() {
           <NavLink to="#">
             <i class="bi bi-search"></i>
           </NavLink>
-          <NavLink to="#">
+          <NavLink to="/cart">
             <i class="bi bi-cart"></i>
           </NavLink>
           <NavLink to="#">
