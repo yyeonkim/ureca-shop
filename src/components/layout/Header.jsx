@@ -14,21 +14,15 @@ function Header() {
         </h1>
 
         <div>
-          <h5>
-            <NavLink className={navLinkClassName} to="/shop">
-              Shop
-            </NavLink>
-          </h5>
-          <h5>
-            <NavLink className={navLinkClassName} to="/blog">
-              Blog
-            </NavLink>
-          </h5>
-          <h5>
-            <NavLink className={navLinkClassName} to="/about">
-              Our Story
-            </NavLink>
-          </h5>
+          <NavLink className={navLinkClassName + " h5"} to="/shop">
+            Shop
+          </NavLink>
+          <NavLink className={navLinkClassName + " h5"} to="/blog">
+            Blog
+          </NavLink>
+          <NavLink className={navLinkClassName + " h5"} to="/about">
+            Our Story
+          </NavLink>
           <span>|</span>
           <NavLink className={navLinkClassName} to="/search">
             <i class="bi bi-search"></i>

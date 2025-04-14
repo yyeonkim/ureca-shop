@@ -16,7 +16,7 @@ const slideImgs = [
 
 export default function MainPage() {
   return (
-    <div className={styles.main}>
+    <>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -34,7 +34,7 @@ export default function MainPage() {
         {slideImgs.map((slide) => (
           <SwiperSlide>
             <img src={slide.src} alt={slide.alt} />
-            <div className={styles["slide-content"]}>
+            <div className={styles.slideContent}>
               <h1>{slide.alt}</h1>
               <h2>$ 68,00</h2>
               <MainButton>View Product</MainButton>
@@ -42,6 +42,15 @@ export default function MainPage() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+
+      <section className={styles.shopSection}>
+        <div>
+          <h2 className="h1">Shop The Latest</h2>
+          <h4>
+            <a href="/shop">View All</a>
+          </h4>
+        </div>
+      </section>
+    </>
   );
 }
