@@ -1,19 +1,58 @@
 @charset "utf-8";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..700&display=swap");
 
 :root {
+  /* Colors */
+  --dark-accent-dark: #b4a186;
+  --dark-light-gray-dark: #9a9a9a;
+  --dark-gray-dark: #3d3d3d;
+  --dark-dark-gray-dark: #272727;
+  --dark-black-dark: #0a0a0a;
+  --dark-white-dark: #fbfbfb;
+  --light-errors-light: #d82700;
+  --light-accent-light: #a18a68;
+  --light-black-light: #000000;
+  --light-dark-gray-light: #707070;
+  --light-gray-light: #d8d8d8;
+  --light-light-gray-light: #efefef;
+  --light-white-light: #ffffff;
+
+  /* Fonts */
+  --heading1-size: 3.3rem;
+  --heading2-size: 2.6rem;
+  --heading3-size: 2rem;
+  --heading4-size: 2rem;
+  --heading5-size: 1.6rem;
+  --body-large-size: 1.6rem;
+  --body-medium-size: 1.4rem;
+  --body-small-size: 1.2rem;
+  --heading2-line-height: 3.5rem;
+  --heading3-line-height: 2.6rem;
+  --heading4-line-height: 2rem;
+  --heading5-line-height: 2.7rem;
+  --body-line-height: 2rem;
+  --heading1-weight: 500;
+  --heading2-weight: 400;
+  --heading3-weight: 400;
+  --heading4-weight: 500;
+  --heading5-weight: 400;
+  --body-large-weight: 600;
+  --body-medium-weight: 400;
+  --body-small-weight: 400;
+
   font-size: 10px;
   box-sizing: border-box;
 }
 
 * {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
 }
 
 body {
   font-size: 1.6rem;
-  line-height: 1.4;
+  line-height: 2.7rem;
+  color: #323232;
 }
 
 a {
@@ -27,7 +66,56 @@ button {
 }
 
 .mw {
-  max-width: 1440px;
+  max-width: 1288px;
   width: calc(100% - 40px);
   margin: 0 auto;
+}
+
+/* Swiper */
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  background: gainsboro;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.swiper-pagination-bullet {
+  opacity: 1;
+  background-color: white;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: transparent;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid white;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination {
+    margin-bottom: 0;
+  }
+
+  .swiper-pagination-bullet {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
 }
