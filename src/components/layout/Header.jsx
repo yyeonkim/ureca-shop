@@ -1,6 +1,8 @@
 import styles from "@/styles/Header.module.css";
 import { NavLink } from "react-router";
 
+const navLinkClassName = ({ isActive }) => (isActive ? styles.active : "");
+
 function Header() {
   return (
     <header className={`mw ${styles.hd}`}>
@@ -13,28 +15,28 @@ function Header() {
 
         <div>
           <h5>
-            <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/shop">
+            <NavLink className={navLinkClassName} to="/shop">
               Shop
             </NavLink>
           </h5>
           <h5>
-            <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/blog">
+            <NavLink className={navLinkClassName} to="/blog">
               Blog
             </NavLink>
           </h5>
           <h5>
-            <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/about">
+            <NavLink className={navLinkClassName} to="/about">
               Our Story
             </NavLink>
           </h5>
           <span>|</span>
-          <NavLink to="#">
+          <NavLink className={navLinkClassName} to="/search">
             <i class="bi bi-search"></i>
           </NavLink>
-          <NavLink to="/cart">
+          <NavLink className={navLinkClassName} to="/cart">
             <i class="bi bi-cart"></i>
           </NavLink>
-          <NavLink to="#">
+          <NavLink className={navLinkClassName} to="/mypage">
             <i class="bi bi-person"></i>
           </NavLink>
         </div>
