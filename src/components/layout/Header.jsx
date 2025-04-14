@@ -12,15 +12,21 @@ function Header() {
         </h1>
 
         <div>
-          <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/shop">
-            Shop
-          </NavLink>
-          <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/blog">
-            Blog
-          </NavLink>
-          <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/about">
-            Our Story
-          </NavLink>
+          <h5>
+            <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/shop">
+              Shop
+            </NavLink>
+          </h5>
+          <h5>
+            <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/blog">
+              Blog
+            </NavLink>
+          </h5>
+          <h5>
+            <NavLink className={({ isActive }) => (isActive ? styles.active : "")} to="/about">
+              Our Story
+            </NavLink>
+          </h5>
           <span>|</span>
           <NavLink to="#">
             <i class="bi bi-search"></i>
