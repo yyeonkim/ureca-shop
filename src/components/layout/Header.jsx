@@ -1,15 +1,32 @@
 import styles from "@/styles/Header.module.css";
-import { useState } from "react";
-import { NavLink } from "react-router";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router";
+import throttle from "../../utils/throttle.js";
+
+const linkClassName = ({ isActive }) => (isActive ? styles.active : "");
 
 function Header() {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const textLinkClassName = ({ isActive }) =>
-    (isActive ? styles.active : "") + ` ${!isOpen && "h5"}`;
+  useEffect(() => {
+    // 브라우저 주소가 바뀌면 사이드 네비게이션 닫기
+    setIsOpen(false);
+  }, [location.pathname]);
 
-  const IconLinkClassName = ({ isActive }) =>
-    (isActive ? styles.active : "") + ` ${!isOpen && "h5"}`;
+  useEffect(() => {
+    // 브라우저 크기가 달라지면 사이드 네비게이션 닫기
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        setIsOpen(false);
+      }, 300)
+    );
+    return () => {
+      setIsOpen(false);
+      window.removeEventListener("resize");
+    };
+  }, []);
 
   return (
     <header className={`mw ${styles.main}`}>
@@ -21,30 +38,30 @@ function Header() {
 
       <nav className={`${styles.gnb} ${isOpen && styles.open}`}>
         {isOpen && (
-          <NavLink className={textLinkClassName} to="/">
+          <NavLink className={linkClassName} to="/">
             Home
           </NavLink>
         )}
-        <NavLink className={textLinkClassName} to="/shop">
+        <NavLink className={linkClassName} to="/shop">
           Shop
         </NavLink>
-        <NavLink className={textLinkClassName} to="/blog">
+        <NavLink className={linkClassName} to="/blog">
           Blog
         </NavLink>
-        <NavLink className={textLinkClassName} to="/about">
+        <NavLink className={linkClassName} to="/about">
           {isOpen ? "About" : "Our Story"}
         </NavLink>
         {!isOpen && <span>|</span>}
-        <NavLink className={IconLinkClassName} to="/search">
+        <NavLink className={linkClassName} to="/search">
           {isOpen ? "Search" : <i class="bi bi-search" />}
         </NavLink>
         {!isOpen && (
-          <NavLink className={IconLinkClassName} to="/cart">
+          <NavLink className={linkClassName} to="/cart">
             <i class="bi bi-cart" />
           </NavLink>
         )}
         {isOpen && <hr />}
-        <NavLink className={IconLinkClassName} to="/mypage">
+        <NavLink className={linkClassName} to="/mypage">
           <i class={`bi bi-person ${styles.person}`} />
           {isOpen && <span>My account</span>}
         </NavLink>

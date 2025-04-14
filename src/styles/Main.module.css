@@ -1,4 +1,9 @@
 /* Swiper */
+.swiper {
+  border-radius: 1.6rem;
+  overflow: hidden;
+}
+
 /* swiper buttons */
 .swiper > div:nth-of-type(2),
 .swiper > div:nth-of-type(3) {
@@ -8,8 +13,6 @@
 /* swiper-slide */
 .swiper > div:first-of-type > div {
   position: relative;
-  border-radius: 1.6rem;
-  overflow: hidden;
   aspect-ratio: 624 / 323;
 }
 
