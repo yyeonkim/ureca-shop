@@ -25,6 +25,7 @@
 .hd nav > div a {
   display: flex;
   align-items: center;
+  padding: 2rem 0;
 }
 
 .hd nav > div a:hover {
