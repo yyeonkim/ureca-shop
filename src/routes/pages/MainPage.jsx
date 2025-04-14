@@ -37,7 +37,7 @@ export default function MainPage() {
           <SwiperSlide>
             <picture className={styles.swiperPicture}>
               {/* Mobile */}
-              <source srcset={slide.srcSet} m media="(max-width: 768px)" />
+              <source srcSet={slide.srcSet} media="(max-width: 768px)" />
               <img src={slide.src} alt={slide.alt} />
             </picture>
             <div className={styles.slideContent}>

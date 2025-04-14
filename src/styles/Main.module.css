@@ -1,5 +1,6 @@
 /* Swiper */
-.swiper {
+.swiper,
+.swiper > div:first-of-type > div {
   border-radius: 1.6rem;
   overflow: hidden;
 }
@@ -73,9 +74,14 @@
 }
 
 @media (max-width: 768px) {
-  /* swiper-slide */
+  /* Swiper */
+  .swiper,
   .swiper > div:first-of-type > div {
     border-radius: 0.8rem;
+  }
+
+  /* swiper-slide */
+  .swiper > div:first-of-type > div {
     aspect-ratio: unset;
     height: 30rem;
   }
