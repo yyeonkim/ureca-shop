@@ -1,5 +1,5 @@
 .mainButton {
-  font-size: 2.1rem;
+  font-size: var(--heading3-size);
   font-weight: 700;
   color: white;
   border: 2px solid white;
@@ -11,4 +11,12 @@
 .mainButton:hover {
   background-color: white;
   color: black;
+}
+
+@media (max-width: 768px) {
+  .mainButton {
+    font-size: var(--body-small-size);
+    font-weight: 400;
+    padding: 1rem 1.2rem;
+  }
 }

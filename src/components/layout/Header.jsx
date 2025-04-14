@@ -1,40 +1,62 @@
 import styles from "@/styles/Header.module.css";
+import { useState } from "react";
 import { NavLink } from "react-router";
 
-const navLinkClassName = ({ isActive }) => (isActive ? styles.active : "");
-
 function Header() {
-  return (
-    <header className={`mw ${styles.hd}`}>
-      <nav>
-        <h1>
-          <NavLink to="/">
-            <img src="/logo.svg" alt="SHOPPE" />
-          </NavLink>
-        </h1>
+  const [isOpen, setIsOpen] = useState(false);
 
-        <div>
-          <NavLink className={navLinkClassName + " h5"} to="/shop">
-            Shop
+  const textLinkClassName = ({ isActive }) =>
+    (isActive ? styles.active : "") + ` ${!isOpen && "h5"}`;
+
+  const IconLinkClassName = ({ isActive }) =>
+    (isActive ? styles.active : "") + ` ${!isOpen && "h5"}`;
+
+  return (
+    <header className={`mw ${styles.main}`}>
+      <h1>
+        <NavLink to="/">
+          <img src="/logo.svg" alt="SHOPPE" />
+        </NavLink>
+      </h1>
+
+      <nav className={`${styles.gnb} ${isOpen && styles.open}`}>
+        {isOpen && (
+          <NavLink className={textLinkClassName} to="/">
+            Home
           </NavLink>
-          <NavLink className={navLinkClassName + " h5"} to="/blog">
-            Blog
+        )}
+        <NavLink className={textLinkClassName} to="/shop">
+          Shop
+        </NavLink>
+        <NavLink className={textLinkClassName} to="/blog">
+          Blog
+        </NavLink>
+        <NavLink className={textLinkClassName} to="/about">
+          {isOpen ? "About" : "Our Story"}
+        </NavLink>
+        {!isOpen && <span>|</span>}
+        <NavLink className={IconLinkClassName} to="/search">
+          {isOpen ? "Search" : <i class="bi bi-search" />}
+        </NavLink>
+        {!isOpen && (
+          <NavLink className={IconLinkClassName} to="/cart">
+            <i class="bi bi-cart" />
           </NavLink>
-          <NavLink className={navLinkClassName + " h5"} to="/about">
-            Our Story
-          </NavLink>
-          <span>|</span>
-          <NavLink className={navLinkClassName} to="/search">
-            <i class="bi bi-search"></i>
-          </NavLink>
-          <NavLink className={navLinkClassName} to="/cart">
-            <i class="bi bi-cart"></i>
-          </NavLink>
-          <NavLink className={navLinkClassName} to="/mypage">
-            <i class="bi bi-person"></i>
-          </NavLink>
-        </div>
+        )}
+        {isOpen && <hr />}
+        <NavLink className={IconLinkClassName} to="/mypage">
+          <i class={`bi bi-person ${styles.person}`} />
+          {isOpen && <span>My account</span>}
+        </NavLink>
       </nav>
+
+      {isOpen ? (
+        // 닫기 아이콘
+        <i class="bi bi-x-lg" onClick={() => setIsOpen(false)} />
+      ) : (
+        // 햄버거 아이콘
+        <i class={`bi bi-list ${styles.hamburger}`} onClick={() => setIsOpen(true)} />
+      )}
     </header>
   );
 }
