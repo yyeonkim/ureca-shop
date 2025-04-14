@@ -8,7 +8,8 @@
     "watch:vite": "vite",
     "dev": "concurrently npm:watch*",
     "build": "vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --config eslint.config.js --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
     "preview": "vite preview"
   },
   "dependencies": {
