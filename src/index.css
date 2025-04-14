@@ -3,6 +3,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..700&display=swap");
 
 :root {
+  /* Colors */
+  --dark-accent-dark: #b4a186;
+  --dark-light-gray-dark: #9a9a9a;
+  --dark-gray-dark: #3d3d3d;
+  --dark-dark-gray-dark: #272727;
+  --dark-black-dark: #0a0a0a;
+  --dark-white-dark: #fbfbfb;
+  --light-errors-light: #d82700;
+  --light-accent-light: #a18a68;
+  --light-black-light: #000000;
+  --light-dark-gray-light: #707070;
+  --light-gray-light: #d8d8d8;
+  --light-light-gray-light: #efefef;
+  --light-white-light: #ffffff;
+
   font-size: 10px;
   box-sizing: border-box;
 }
@@ -24,6 +39,64 @@ a {
 button {
   background-color: transparent;
   border: none;
+}
+
+/* Fonts */
+h1 {
+  font-size: 3.3rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2.6rem;
+  line-height: 3.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+h4 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+h5 {
+  line-height: 2.7rem;
+}
+
+.text-large16 {
+  font-weight: 700;
+}
+
+.text-medium14 {
+  font-size: 1.4rem;
+}
+
+.text-small12 {
+  font-size: 1.2rem;
+  line-height: 2em;
+}
+
+/* Mobile fonts */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.6rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    line-height: 2.7rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    line-height: normal;
+  }
 }
 
 .mw {
