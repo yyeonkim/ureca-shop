@@ -27,6 +27,16 @@
   align-items: center;
 }
 
+/* icon */
+.hd nav > div a i {
+  font-size: 2rem;
+}
+
+/* user icon */
+.hd nav > div a:nth-of-type(6) i {
+  font-size: 2.4rem;
+}
+
 .hd .active {
   border-bottom: 2px solid black;
 }

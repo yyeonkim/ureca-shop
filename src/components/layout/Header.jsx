@@ -1,5 +1,4 @@
 import styles from "@/styles/Header.module.css";
-import { Search, ShoppingCart, User } from "lucide-react";
 import { NavLink } from "react-router";
 
 function Header() {
@@ -24,13 +23,13 @@ function Header() {
           </NavLink>
           <span>|</span>
           <NavLink to="#">
-            <Search size={20} />
+            <i class="bi bi-search"></i>
           </NavLink>
           <NavLink to="#">
-            <ShoppingCart size={20} />
+            <i class="bi bi-cart"></i>
           </NavLink>
           <NavLink to="#">
-            <User size={20} />
+            <i class="bi bi-person"></i>
           </NavLink>
         </div>
       </nav>
