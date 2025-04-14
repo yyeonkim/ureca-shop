@@ -1,6 +1,7 @@
 import styles from "@/styles/Main.module.css";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import MainButton from "../../components/MainButton.jsx";
 
 const slideImgs = [
   {
@@ -33,6 +34,11 @@ export default function MainPage() {
         {slideImgs.map((slide) => (
           <SwiperSlide>
             <img src={slide.src} alt={slide.alt} />
+            <div className={styles["slide-content"]}>
+              <h1>{slide.alt}</h1>
+              <h2>$ 68,00</h2>
+              <MainButton>View Product</MainButton>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
