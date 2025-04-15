@@ -78,8 +78,7 @@ button {
 
 .swiper-slide {
   text-align: center;
-  background: gainsboro;
-  /* Center slide text vertically */
+  background-color: var(--light-light-gray-light);
   display: flex;
   justify-content: center;
   align-items: center;
