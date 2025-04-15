@@ -35,6 +35,7 @@ function MainSwiper() {
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
       className={styles.swiper}
+      role="group"
     >
       {slideImgs.map((slide, i) => (
         <SwiperSlide>
