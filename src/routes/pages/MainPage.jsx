@@ -1,7 +1,6 @@
-// import MainSwiper from "@/components/MainSwiper.jsx";
 import styles from "@/styles/Main.module.css";
-
 import { lazy, Suspense } from "react";
+
 const MainSwiper = lazy(() => import("@/components/MainSwiper.jsx"));
 
 export default function MainPage() {
@@ -10,7 +9,7 @@ export default function MainPage() {
       <Suspense fallback={<p className={styles.loading}>Loading...</p>}>
         <MainSwiper />
       </Suspense>
-      {/* <MainSwiper /> */}
+
       <section className={styles.shopSection}>
         <div>
           <h2>Shop The Latest</h2>

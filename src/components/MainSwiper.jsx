@@ -36,7 +36,7 @@ function MainSwiper() {
       modules={[Autoplay, Pagination, Navigation]}
       className={styles.swiper}
     >
-      {slideImgs.map((slide) => (
+      {slideImgs.map((slide, i) => (
         <SwiperSlide>
           <picture className={styles.swiperPicture}>
             {/* Mobile WebP */}
@@ -46,7 +46,7 @@ function MainSwiper() {
             {/* Desktop WebP */}
             <source srcSet={slide.srcSetPCWebP} type="image/webp" media="(min-width: 768px)" />
             {/* Desktop JPG */}
-            <img src={slide.src} alt={slide.alt} />
+            <img src={slide.src} alt={slide.alt} loading={i === 0 ? "eager" : "lazy"} />
           </picture>
           <div className={styles.slideContent}>
             <h2>{slide.alt}</h2>
