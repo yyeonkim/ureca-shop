@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 function MoreLink() {
   return (
-    <Link className={styles.more} href="/shop">
+    <Link className={styles.more} to="/shop">
       View All
     </Link>
   );
