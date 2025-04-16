@@ -6,8 +6,12 @@ async function getProducts({ params }) {
 }
 
 async function getProduct(id) {
-  const res = await axios.get(`/products/${id}`);
-  return res.data;
+  try {
+    const res = await axios.get(`/products/${id}`);
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 export { getProduct, getProducts };
