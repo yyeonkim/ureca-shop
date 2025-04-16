@@ -1,5 +1,4 @@
 import styles from "@/styles/ProductCardSkeleton.module.css";
-import { memo } from "react";
 
 function ProductCardSkeleton() {
   return (
@@ -14,4 +13,4 @@ function ProductCardSkeleton() {
   );
 }
 
-export default memo(ProductCardSkeleton);
+export default ProductCardSkeleton;
