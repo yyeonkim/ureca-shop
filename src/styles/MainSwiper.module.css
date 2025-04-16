@@ -15,6 +15,7 @@
 .swiper > div:first-of-type > div {
   position: relative;
   aspect-ratio: 624 / 323;
+  cursor: pointer;
 }
 
 .swiperPicture {
@@ -33,7 +34,7 @@
   left: 4rem;
   transform: translateY(-50%);
   text-align: left;
-  color: var(--light-white-light);
+  color: var(--light-white);
 }
 
 .slideContent h2 {

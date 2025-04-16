@@ -1,3 +1,4 @@
+import { getProduct } from "@/api/products.js";
 import Layout from "@/components/layout/index.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import AboutPage from "./pages/AboutPage.jsx";
@@ -5,6 +6,7 @@ import BlogPage from "./pages/BlogPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
 import ShopPage from "./pages/ShopPage.jsx";
 
 const router = createBrowserRouter([
@@ -30,6 +32,15 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <CartPage />,
+      },
+      {
+        path: "/products/:id",
+        loader: async ({ params }) => {
+          const product = await getProduct(params.id);
+          return { product };
+        },
+
+        element: <ProductPage />,
       },
     ],
   },

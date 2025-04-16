@@ -27,6 +27,12 @@ function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    // 스크롤 제어
+    if (isOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "visible";
+  }, [isOpen]);
+
   return (
     <header className={`mw ${styles.main}`}>
       <h1>
@@ -40,34 +46,25 @@ function Header() {
         className={`${styles.gnb} ${isOpen && styles.open}`}
         aria-expanded={isOpen}
       >
-        {isOpen && (
-          <NavLink className={linkClassName} to="/">
-            Home
-          </NavLink>
-        )}
-        <NavLink className={linkClassName} to="/shop">
-          Shop
-        </NavLink>
-        <NavLink className={linkClassName} to="/blog">
-          Blog
-        </NavLink>
-        <NavLink className={linkClassName} to="/about">
-          {isOpen ? "About" : "Our Story"}
-        </NavLink>
+        {isOpen && <MainNavLink to="/">Home</MainNavLink>}
+        <MainNavLink to="/shop">Shop</MainNavLink>
+        <MainNavLink to="/blog">Blog</MainNavLink>
+        <MainNavLink to="/about"> {isOpen ? "About" : "Our Story"}</MainNavLink>
         {!isOpen && <span aria-hidden="true">|</span>}
-        <NavLink className={linkClassName} to="/search" aria-label="검색페이지 가기">
+        <MainNavLink to="/search" aria-label="검색페이지 가기">
           {isOpen ? "Search" : <i className="bi bi-search" />}
-        </NavLink>
+        </MainNavLink>
+
         {!isOpen && (
-          <NavLink className={linkClassName} to="/cart" aria-label="장바구니 가기">
+          <MainNavLink to="/cart" aria-label="장바구니 가기">
             <i className="bi bi-cart" />
-          </NavLink>
+          </MainNavLink>
         )}
         {isOpen && <hr aria-hidden="true" />}
-        <NavLink className={linkClassName} to="/mypage" aria-label="마이페이지 가기">
+        <MainNavLink to="/mypage" aria-label="마이페이지 가기">
           <i className={`bi bi-person ${styles.person}`} />
           {isOpen && <span>My account</span>}
-        </NavLink>
+        </MainNavLink>
       </nav>
 
       {isOpen ? (
@@ -90,6 +87,14 @@ function Header() {
         />
       )}
     </header>
+  );
+}
+
+function MainNavLink({ children, ...restProps }) {
+  return (
+    <NavLink className={linkClassName} {...restProps}>
+      {children}
+    </NavLink>
   );
 }
 

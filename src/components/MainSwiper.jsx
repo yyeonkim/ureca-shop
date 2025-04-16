@@ -1,4 +1,5 @@
 import styles from "@/styles/MainSwiper.module.css";
+import { useNavigate } from "react-router";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import MainButton from "./MainButton.jsx";
@@ -21,6 +22,8 @@ const slideImgs = [
 ];
 
 function MainSwiper() {
+  const navigate = useNavigate();
+
   return (
     <Swiper
       spaceBetween={30}
@@ -38,7 +41,7 @@ function MainSwiper() {
       role="group"
     >
       {slideImgs.map((slide, i) => (
-        <SwiperSlide>
+        <SwiperSlide onClick={() => navigate("/shop")}>
           <picture className={styles.swiperPicture}>
             {/* Mobile WebP */}
             <source srcSet={slide.srcSetMoWebP} type="image/webp" media="(max-width: 768px)" />
