@@ -26,7 +26,7 @@ export default function MainPage() {
       <section className={styles.shopSection}>
         <div>
           <h2>Shop The Latest</h2>
-          {params && <MoreLink onClick={() => setParams({ _sort: "category" })} />}
+          {params._limit && <MoreLink onClick={() => setParams({ _sort: "category" })} />}
         </div>
         {/* 상품 리스트 */}
         <div>
