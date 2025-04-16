@@ -3,19 +3,19 @@
 
 :root {
   /* Colors */
-  --dark-accent-dark: #b4a186;
-  --dark-light-gray-dark: #9a9a9a;
-  --dark-gray-dark: #3d3d3d;
-  --dark-dark-gray-dark: #272727;
-  --dark-black-dark: #0a0a0a;
-  --dark-white-dark: #fbfbfb;
-  --light-errors-light: #d82700;
-  --light-accent-light: #a18a68;
-  --light-black-light: #000000;
-  --light-dark-gray-light: #707070;
-  --light-gray-light: #d8d8d8;
-  --light-light-gray-light: #efefef;
-  --light-white-light: #ffffff;
+  --dark-accent: #b4a186;
+  --dark-light-gray: #9a9a9a;
+  --dark-gray: #3d3d3d;
+  --dark-dark-gray: #272727;
+  --dark-black: #0a0a0a;
+  --dark-white: #fbfbfb;
+  --light-errors: #d82700;
+  --light-accent: #a18a68;
+  --light-black: #000000;
+  --light-dark-gray: #707070;
+  --light-gray: #d8d8d8;
+  --light-light-gray: #efefef;
+  --light-white: #ffffff;
 
   /* Fonts */
   --heading1-size: 3.3rem;
@@ -66,7 +66,7 @@ button {
 }
 
 .mw {
-  max-width: 1288px;
+  max-width: 1248px;
   width: calc(100% - 40px);
   margin: 0 auto;
 }
@@ -78,7 +78,7 @@ button {
 
 .swiper-slide {
   text-align: center;
-  background-color: var(--light-light-gray-light);
+  background-color: var(--light-light-gray);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +121,7 @@ button {
 
 /* Skeleton UI: 크기 지정 필요 */
 .skeleton {
-  background-color: var(--light-gray-light);
+  background-color: var(--light-gray);
   position: relative;
   overflow: hidden;
 }
@@ -130,7 +130,7 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, var(--light-light-gray-light), transparent);
+  background: linear-gradient(90deg, transparent, var(--light-light-gray), transparent);
   animation: shimmer 1.5s infinite;
 }
 

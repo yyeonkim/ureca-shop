@@ -34,7 +34,7 @@
   left: 4rem;
   transform: translateY(-50%);
   text-align: left;
-  color: var(--light-white-light);
+  color: var(--light-white);
 }
 
 .slideContent h2 {

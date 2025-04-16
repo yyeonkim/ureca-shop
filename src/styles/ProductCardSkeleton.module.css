@@ -1,0 +1,31 @@
+.card .img {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 0.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.card .text {
+  height: 2rem;
+  width: 60%;
+}
+
+.card .subText {
+  width: 30%;
+  margin-top: 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .card .img {
+    margin-bottom: 1rem;
+    border-radius: 0.4rem;
+  }
+
+  .card .text {
+    height: 1.2rem;
+  }
+
+  .card .subText {
+    margin-top: 1rem;
+  }
+}

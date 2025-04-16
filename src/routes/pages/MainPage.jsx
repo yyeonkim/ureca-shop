@@ -1,16 +1,18 @@
-import { getProducts } from "@/api/products.js";
+import MoreLink from "@/components/MoreLink.jsx";
 import ProductCard from "@/components/ProductCard.jsx";
+import ProductCardSkeleton from "@/components/ProductCardSkeleton.jsx";
+import useGetProducts from "@/hooks/useGetProducts.js";
+import useIsMobile from "@/hooks/useIsMobile.js";
 import styles from "@/styles/Main.module.css";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
 
 const MainSwiper = lazy(() => import("@/components/MainSwiper.jsx"));
 
 export default function MainPage() {
-  const [products, setProducts] = useState([]);
+  const isMobile = useIsMobile();
 
-  useEffect(() => {
-    getProducts().then((data) => setProducts(data));
-  }, []);
+  const _limit = isMobile ? 4 : 6;
+  const { data: products, isLoading } = useGetProducts({ params: { category: "new", _limit } });
 
   return (
     <>
@@ -21,15 +23,15 @@ export default function MainPage() {
       <section className={styles.shopSection}>
         <div>
           <h2>Shop The Latest</h2>
-          <span>
-            <a href="/shop">View All</a>
-          </span>
+          <MoreLink />
         </div>
-
+        {/* 상품 리스트 */}
         <div>
-          {products.map((item) => (
-            <ProductCard product={item} />
-          ))}
+          {isLoading
+            ? Array(_limit)
+                .fill(0)
+                .map(() => <ProductCardSkeleton />)
+            : products.map((item) => <ProductCard key={item.id} product={item} />)}
         </div>
       </section>
     </>

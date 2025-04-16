@@ -1,8 +1,13 @@
 import { axios } from "@/utils/axios.js";
 
-async function getProducts() {
-  const res = await axios.get("/products");
+async function getProducts({ params }) {
+  const res = await axios.get("/products", { params });
   return res.data;
 }
 
-export { getProducts };
+async function getProduct(id) {
+  const res = await axios.get(`/products/${id}`);
+  return res.data;
+}
+
+export { getProduct, getProducts };
