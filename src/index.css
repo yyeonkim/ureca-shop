@@ -118,3 +118,27 @@ button {
     height: 0.8rem;
   }
 }
+
+/* Skeleton UI: 크기 지정 필요 */
+.skeleton {
+  background-color: var(--light-gray-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--light-light-gray-light), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

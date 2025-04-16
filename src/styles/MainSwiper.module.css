@@ -15,6 +15,7 @@
 .swiper > div:first-of-type > div {
   position: relative;
   aspect-ratio: 624 / 323;
+  cursor: pointer;
 }
 
 .swiperPicture {

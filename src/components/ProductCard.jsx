@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 function ProductCard({ product }) {
   return (
     <div>
@@ -10,4 +12,7 @@ function ProductCard({ product }) {
   );
 }
 
-export default ProductCard;
+export default memo(
+  ProductCard,
+  (oldProps, newProps) => oldProps.product.id === newProps.product.id
+);

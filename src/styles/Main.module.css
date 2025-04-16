@@ -1,13 +1,7 @@
 .loading {
   aspect-ratio: 624 / 323;
-  width: 100%;
-  text-align: center;
-  background-color: var(--light-light-gray-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 1.6rem;
-  color: var(--light-dark-gray-light);
+  width: 100%;
 }
 
 /* shop section */

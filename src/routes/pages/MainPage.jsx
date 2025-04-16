@@ -14,7 +14,7 @@ export default function MainPage() {
 
   return (
     <>
-      <Suspense fallback={<p className={styles.loading}>Loading...</p>}>
+      <Suspense fallback={<div className={`${styles.loading} skeleton`} />}>
         <MainSwiper />
       </Suspense>
 
