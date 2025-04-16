@@ -2,6 +2,9 @@
   font-size: var(--heading4-size);
   font-weight: var(--heading4-weight);
   color: var(--light-accent);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .more:hover {
