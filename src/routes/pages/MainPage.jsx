@@ -11,10 +11,10 @@ const MainSwiper = lazy(() => import("@/components/MainSwiper.jsx"));
 export default function MainPage() {
   const isMobile = useIsMobile();
 
-  const _limit = isMobile ? 4 : 6;
+  const initialLimit = isMobile ? 4 : 6;
 
   const [params, setParams] = useState({
-    _limit,
+    _limit: initialLimit,
     category: "new",
   });
 
@@ -36,9 +36,9 @@ export default function MainPage() {
         {/* 상품 리스트 */}
         <div>
           {isLoading
-            ? Array(_limit)
+            ? Array(initialLimit)
                 .fill(0)
-                .map(() => <ProductCardSkeleton />)
+                .map((_, index) => <ProductCardSkeleton key={index} />)
             : products.map((item) => <ProductCard key={item.id} product={item} />)}
         </div>
       </section>
