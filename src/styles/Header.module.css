@@ -1,11 +1,15 @@
-.main {
+.hd {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 4rem;
 }
 
-.main > i {
+.hr {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.hd > i {
   display: none;
 }
 
@@ -54,14 +58,14 @@ a {
 }
 
 @media (max-width: 768px) {
-  .main > i {
+  .hd > i {
     display: block;
     padding: 2rem 0;
     font-size: 2rem;
     cursor: pointer;
   }
 
-  .main .hamburger {
+  .hd .hamburger {
     font-size: 2.4rem;
   }
 

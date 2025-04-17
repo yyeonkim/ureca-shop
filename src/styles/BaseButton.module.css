@@ -1,0 +1,14 @@
+.base {
+  border: 1px solid black;
+  border-radius: 0.4rem;
+  background-color: white;
+  max-width: 28.8rem;
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.base:hover {
+  background-color: black;
+  color: white;
+  transition: background-color 0.2s;
+}

@@ -30,8 +30,8 @@ export default function MainPage() {
           {isLoading
             ? Array(_limit)
                 .fill(0)
-                .map(() => <ProductCardSkeleton />)
-            : products.map((item) => <ProductCard key={item.id} product={item} />)}
+                .map((_, i) => <ProductCardSkeleton key={`loading-${i}`} />)
+            : products.map((item) => <ProductCard key={`prod-${item.id}`} product={item} />)}
         </div>
       </section>
     </>

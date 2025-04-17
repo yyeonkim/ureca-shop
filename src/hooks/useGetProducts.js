@@ -10,7 +10,7 @@ export default function useGetProducts({ params }) {
       setData(data);
       setIsLoading(false);
     });
-  }, []);
+  }, [params._limit]);
 
   return { data, isLoading };
 }

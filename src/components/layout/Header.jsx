@@ -9,16 +9,16 @@ function Header() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSize = throttle(() => {
-    setIsOpen(false);
-  }, 300);
-
   useEffect(() => {
     // 브라우저 주소가 바뀌면 사이드 네비게이션 닫기
     setIsOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
+    const handleSize = throttle(() => {
+      setIsOpen(false);
+    }, 300);
+
     // 브라우저 크기가 달라지면 사이드 네비게이션 닫기
     window.addEventListener("resize", handleSize);
     return () => {
@@ -34,7 +34,7 @@ function Header() {
   }, [isOpen]);
 
   return (
-    <header className={`mw ${styles.main}`}>
+    <header className={`${styles.hd} ${location.pathname === "/" ? "" : styles.hr} mw`}>
       <h1>
         <NavLink to="/" aria-label="홈으로 가기">
           <img src="/logo.svg" alt="SHOPPE" />

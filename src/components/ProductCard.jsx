@@ -7,7 +7,7 @@ function ProductCard({ product }) {
     <div className={styles.productCard}>
       <div className={styles.imgWrap}>
         <img src={`/products/${product.img}`} alt={product.title} />
-        <span>{product.category.toUpperCase()}</span>
+        {product.discount > 0 && <span>{`-${product.discount}%`}</span>}
       </div>
       <h4>{product.title}</h4>
       <span>₩ {product.price.toLocaleString()}</span>

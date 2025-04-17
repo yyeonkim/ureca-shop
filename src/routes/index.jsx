@@ -12,6 +12,7 @@ import ShopPage from "./pages/ShopPage.jsx";
 const router = createBrowserRouter([
   {
     element: <Layout />,
+
     children: [
       {
         path: "/",
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
           const product = await getProduct(params.id);
           return { product };
         },
-
+        hydrateFallbackElement: <p>Loading...</p>, // TODO: 스켈레톤 넣기기
         element: <ProductPage />,
       },
     ],
