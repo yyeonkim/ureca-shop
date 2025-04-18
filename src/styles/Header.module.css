@@ -106,4 +106,8 @@ a {
     width: 100%;
     border-top: 1px solid var(--light-gray);
   }
+
+  .hr {
+    border-bottom: none;
+  }
 }

@@ -5,10 +5,20 @@
   max-width: 28.8rem;
   width: 100%;
   padding: 0.8rem;
+  font-size: var(--body-large-size);
+  font-weight: var(--body-large-weight);
 }
 
 .base:hover {
   background-color: black;
   color: white;
   transition: background-color 0.2s;
+}
+
+@media (max-width: 768px) {
+  .base {
+    font-size: var(--body-small-size);
+    font-weight: var(--body-small-weight);
+    max-width: none;
+  }
 }

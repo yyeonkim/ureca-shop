@@ -1,0 +1,34 @@
+/* swiper-slide */
+.similarSwiper > div:first-of-type > div {
+  background-color: transparent;
+}
+
+/* swiper butons */
+.similarSwiper > div:nth-of-type(2),
+.similarSwiper > div:last-of-type {
+  color: var(--light-accent);
+}
+
+/* ProductCard */
+.prodCard {
+  width: 100%;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  /* swiper-buton-prev */
+  .similarSwiper > div:nth-of-type(2) {
+    left: 0rem;
+  }
+
+  /* swiper-buton-next */
+  .similarSwiper > div:last-of-type {
+    right: 0;
+  }
+
+  /* swiper butons */
+  .similarSwiper > div:nth-of-type(2)::after,
+  .similarSwiper > div:last-of-type::after {
+    font-size: 2rem;
+  }
+}
