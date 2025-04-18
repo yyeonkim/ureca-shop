@@ -8,7 +8,7 @@ export default function useIsMobile() {
     const handleResize = throttle(() => {
       if (window.innerWidth <= 768) setIsMobile(true);
       else setIsMobile(false);
-    }, 300);
+    }, 200);
 
     handleResize(); // 최초 실행
     window.addEventListener("resize", handleResize);

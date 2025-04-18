@@ -16,8 +16,8 @@ function ProductSwiper() {
 
   return (
     <Swiper
-      navigation={true}
-      slidesPerView={3}
+      navigation={isMobile ? false : true}
+      slidesPerView={isMobile ? 2.4 : 3}
       spaceBetween={isMobile ? 12 : 54}
       modules={[Navigation]}
       className={styles.similarSwiper}

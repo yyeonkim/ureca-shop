@@ -1,0 +1,33 @@
+.modal {
+  max-width: 32.4rem;
+  width: 100%;
+  height: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.4rem;
+  margin: 0 2rem;
+}
+
+.modal p {
+  text-align: center;
+  font-size: var(--body-large-size);
+  font-weight: var(--body-large-weight);
+}
+
+.modal > div {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  gap: 1.2rem;
+  margin-top: 2.4rem;
+}
+
+@media (max-width: 768px) {
+  .modal p {
+    text-align: center;
+    font-size: var(--body-small-size);
+    font-weight: var(--body-small-weight);
+  }
+}

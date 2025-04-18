@@ -7,6 +7,12 @@
 .similarSwiper > div:nth-of-type(2),
 .similarSwiper > div:last-of-type {
   color: var(--light-accent);
+  transform: translateY(-5rem);
+}
+
+.similarSwiper > div:nth-of-type(2)::after,
+.similarSwiper > div:last-of-type::after {
+  font-size: 2.4rem;
 }
 
 /* ProductCard */
@@ -16,19 +22,8 @@
 }
 
 @media (max-width: 768px) {
-  /* swiper-buton-prev */
-  .similarSwiper > div:nth-of-type(2) {
-    left: 0rem;
-  }
-
-  /* swiper-buton-next */
-  .similarSwiper > div:last-of-type {
-    right: 0;
-  }
-
-  /* swiper butons */
-  .similarSwiper > div:nth-of-type(2)::after,
-  .similarSwiper > div:last-of-type::after {
-    font-size: 2rem;
+  .similarSwiper {
+    width: calc(100% + 40px);
+    transform: translateX(-20px);
   }
 }

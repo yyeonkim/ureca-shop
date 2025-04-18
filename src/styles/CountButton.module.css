@@ -1,0 +1,32 @@
+.count {
+  border-radius: 0.4rem;
+  background-color: var(--light-light-gray);
+  width: fit-content;
+  font-size: var(--heading5-size);
+  font-weight: var(--heading5-weight);
+  color: var(--light-dark-gray);
+  display: flex;
+  align-items: center;
+}
+
+.count button {
+  width: 3.4rem;
+  height: 5.4rem;
+}
+
+.count span {
+  text-align: center;
+  width: 3rem;
+}
+
+@media (max-width: 768px) {
+  .count {
+    font-size: var(--body-medium-size);
+    font-weight: var(--body-medium-weight);
+  }
+
+  .count button {
+    height: 3.2rem;
+    width: 3rem;
+  }
+}

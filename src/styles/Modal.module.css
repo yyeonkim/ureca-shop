@@ -1,0 +1,23 @@
+.base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.content {
+  background-color: white;
+  border-radius: 0.8rem;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+}
