@@ -1,5 +1,11 @@
 import { axios } from "@/utils/axios.js";
 
+// GET /cart
+async function getCart() {
+  const res = await axios.get("/cart");
+  return res.data;
+}
+
 // POST /cart
 async function postCart(body) {
   const res = await axios.post("/cart", body);
@@ -31,4 +37,4 @@ async function putCart(body) {
   }
 }
 
-export { deleteCart, patchCart, postCart, putCart };
+export { deleteCart, getCart, patchCart, postCart, putCart };

@@ -1,3 +1,4 @@
+import { getCart } from "@/api/cart.js";
 import { getProduct } from "@/api/products.js";
 import Layout from "@/components/layout/index.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
@@ -33,6 +34,12 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <CartPage />,
+        loader: async () => {
+          const cart = await getCart();
+          const products = await Promise.all(cart.map((item) => getProduct(item.id)));
+          return { products, cart };
+        },
+        hydrateFallbackElement: <p>Loading...</p>, // TODO: 스켈레톤 넣기기
       },
       {
         path: "/products/:id",
