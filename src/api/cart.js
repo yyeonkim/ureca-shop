@@ -14,17 +14,17 @@ async function postCart(body) {
 
 // PATCH /cart/{id}
 async function patchCart({ id, ...body }) {
-  const res = await axios.patch(`/cart${id}`, body);
+  const res = await axios.patch(`/cart/${id}`, body);
   return res.data;
 }
 
-// PATCH /cart/{id}
+// DELETE /cart/{id}
 async function deleteCart(id) {
-  const res = await axios.delete(`/cart${id}`);
+  const res = await axios.delete(`/cart/${id}`);
   return res.data;
 }
 
-// PUT /cart
+// PUT /cart/{id}
 async function putCart(body) {
   try {
     const res = await axios.put(`/cart/${body.id}`, body);

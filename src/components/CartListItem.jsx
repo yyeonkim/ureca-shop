@@ -1,9 +1,10 @@
 import Close from "@/assets/Close.jsx";
 import useIsMobile from "@/hooks/useIsMobile.js";
 import styles from "@/styles/CartListItem.module.css";
+import { memo } from "react";
 import CountButton from "./CountButton.jsx";
 
-function CartListItem({ product, count }) {
+function CartListItem({ product, count, onChangeCount }) {
   const isMobile = useIsMobile();
 
   return (
@@ -17,7 +18,7 @@ function CartListItem({ product, count }) {
           <h3 className="line-clamp-2">{product.title}</h3>
           <span className={styles.price}>₩ {product.price.toLocaleString()}</span>
         </div>
-        <CountButton count={count} />
+        <CountButton count={count} onChangeCount={onChangeCount} />
       </div>
 
       <Close width={isMobile ? 20 : 24} height={isMobile ? 20 : 24} />
@@ -25,4 +26,8 @@ function CartListItem({ product, count }) {
   );
 }
 
-export default CartListItem;
+export default memo(
+  CartListItem,
+  (oldProps, newProps) =>
+    oldProps.product.id === newProps.product.id && oldProps.count === newProps.count
+);
