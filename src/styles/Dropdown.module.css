@@ -1,0 +1,54 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+}
+
+.dropdown {
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid var(--light-gray);
+  border-radius: 0.4rem;
+  padding: 1.6rem 1.2rem;
+}
+
+.dropdown button i {
+  font-size: 2rem;
+}
+
+.dropdown ul {
+  border-radius: 0.4rem;
+  position: absolute;
+  background-color: white;
+  top: calc(100% + 0.4rem);
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  max-height: 0;
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.dropdown ul.open {
+  max-height: 15.2rem;
+  padding: 0.1rem;
+}
+
+.dropdown ul li {
+  padding: 0 1.2rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.4rem;
+}
+
+.dropdown ul li:hover {
+  background-color: var(--light-light-gray);
+}

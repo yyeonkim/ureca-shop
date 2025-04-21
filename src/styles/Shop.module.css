@@ -1,0 +1,27 @@
+.h2 {
+  font-size: var(--heading1-size);
+  font-weight: var(--heading1-weight);
+  margin-top: 9.6rem;
+  margin-bottom: 4rem;
+}
+
+.shop {
+  display: flex;
+  gap: 3.4rem;
+}
+
+.filters {
+  max-width: 26.2rem;
+  width: 100%;
+}
+
+.filters .category {
+  margin-bottom: 1.6rem;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2.4rem;
+  column-gap: 7rem;
+}

@@ -1,5 +1,5 @@
 import { getCart } from "@/api/cart.js";
-import { getProduct } from "@/api/products.js";
+import { getProduct, getProducts } from "@/api/products.js";
 import Layout from "@/components/layout/index.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import AboutPage from "./pages/AboutPage.jsx";
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <ShopPage />,
+        loader: async () => {
+          const products = await getProducts({ params: { _limit: 6 } });
+          return { products };
+        },
       },
       {
         path: "/blog",
