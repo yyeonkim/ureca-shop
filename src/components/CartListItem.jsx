@@ -4,6 +4,7 @@ import styles from "@/styles/CartListItem.module.css";
 import { memo } from "react";
 import { Link } from "react-router";
 import CountButton from "./CountButton.jsx";
+import ProductPrice from "./ProductPrice.jsx";
 
 function CartListItem({ product, count, onChangeCount, onClickDelete }) {
   const isMobile = useIsMobile();
@@ -18,7 +19,11 @@ function CartListItem({ product, count, onChangeCount, onClickDelete }) {
       <div>
         <div>
           <h3 className="line-clamp-2">{product.title}</h3>
-          <span className={styles.price}>₩ {product.price.toLocaleString()}</span>
+          <ProductPrice
+            className={styles.price}
+            originalPrice={product.price}
+            discountAmount={(product.price * product.discount) / 100}
+          />
         </div>
         <CountButton count={count} onChangeCount={(cnt) => onChangeCount(cnt, product.id)} />
       </div>

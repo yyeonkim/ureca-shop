@@ -19,12 +19,24 @@
 }
 
 .totalAmount {
-  font-size: var(--body-large-size);
-  font-weight: var(--body-large-weight);
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 4.2rem;
+}
+
+.totalAmount strong {
+  font-size: var(--body-large-size);
+  font-weight: var(--body-large-weight);
+}
+
+.totalAmount .price span {
+  font-size: var(--body-large-size);
+  font-weight: var(--body-large-weight);
+}
+
+.totalAmount .price span:last-of-type {
+  color: black;
 }
 
 @media (max-width: 768px) {

@@ -1,8 +1,9 @@
 import { deleteCart, patchCart } from "@/api/cart.js";
 import CartListItem from "@/components/CartListItem.jsx";
 import NotificationBar from "@/components/NotificationBar.jsx";
+import ProductPrice from "@/components/ProductPrice.jsx";
 import styles from "@/styles/Cart.module.css";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useLoaderData } from "react-router";
 
 export default function CartPage() {
@@ -21,12 +22,18 @@ export default function CartPage() {
     await deleteCart(id);
   };
 
-  const calculateTotalAmount = () => {
-    return cartList.reduce((acc, cartItem) => {
+  const totalAmount = useMemo(() => {
+    let originalPrice = 0;
+    let discountAmount = 0;
+
+    cartList.forEach((cartItem) => {
       const product = products.find((prod) => prod.id === cartItem.id);
-      return acc + product.price * cartItem.count;
-    }, 0);
-  };
+      originalPrice += product.price * cartItem.count;
+      discountAmount += ((product.price * product.discount) / 100) * cartItem.count;
+    });
+
+    return { originalPrice, discountAmount };
+  }, [cartList, products]);
 
   return (
     <>
@@ -62,7 +69,11 @@ export default function CartPage() {
           {/* 총 금액 */}
           <div className={styles.totalAmount}>
             <strong>TOTAL</strong>
-            <span>₩ {calculateTotalAmount().toLocaleString()}</span>
+            <ProductPrice
+              className={styles.price}
+              originalPrice={totalAmount.originalPrice}
+              discountAmount={totalAmount.discountAmount}
+            />
           </div>
         </>
       )}

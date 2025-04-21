@@ -7,6 +7,7 @@ import AddToCartModal from "./AddToCartModal.jsx";
 import AddToCartSuccessModal from "./AddToCartSuccessModal.jsx";
 import BaseButton from "./BaseButton.jsx";
 import CountButton from "./CountButton.jsx";
+import ProductPrice from "./ProductPrice.jsx";
 
 function ProductDetailSection() {
   const { product } = useLoaderData();
@@ -44,14 +45,17 @@ function ProductDetailSection() {
         </div>
         <div className={styles.info}>
           <h2>{product.title}</h2>
-          <span>₩ {product.price.toLocaleString()}</span>
+          <ProductPrice
+            originalPrice={product.price}
+            discountAmount={(product.price * product.discount) / 100}
+          />
           <div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a
               volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed
               quis mauris eget arcu facilisis consequat sed eu felis.
             </p>
-            <div>
+            <div className={styles.btnWrap}>
               {!isMobile && <CountButton count={count} onChangeCount={(cnt) => setCount(cnt)} />}
               <BaseButton onClick={handleAddCart}>ADD TO CART</BaseButton>
             </div>

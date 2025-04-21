@@ -42,7 +42,6 @@
 .list .price {
   font-size: var(--heading5-size);
   font-weight: var(--heading5-weight);
-  color: var(--light-accent);
 }
 
 @media (max-width: 768px) {

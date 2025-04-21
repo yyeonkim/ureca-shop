@@ -4,6 +4,7 @@ import { useState } from "react";
 import BaseButton from "./BaseButton.jsx";
 import CountButton from "./CountButton.jsx";
 import BaseModal from "./modal/BaseModal.jsx";
+import ProductPrice from "./ProductPrice.jsx";
 
 function AddToCartModal({ isOpen, onClose, product }) {
   const [count, setCount] = useState(1);
@@ -22,7 +23,10 @@ function AddToCartModal({ isOpen, onClose, product }) {
       <h3>{product.title}</h3>
       <hr />
       <div>
-        <span>₩ {product.price.toLocaleString()}</span>
+        <ProductPrice
+          originalPrice={product.price}
+          discountAmount={(product.price * product.discountAmount) / 100}
+        />
         <CountButton count={count} onChangeCount={(cnt) => setCount(cnt)} />
       </div>
       <div>

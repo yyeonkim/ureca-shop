@@ -1,6 +1,7 @@
 import styles from "@/styles/ProductCard.module.css";
 import { memo } from "react";
 import { Link } from "react-router";
+import ProductPrice from "./ProductPrice.jsx";
 
 function ProductCard({ product, className }) {
   return (
@@ -10,7 +11,10 @@ function ProductCard({ product, className }) {
         {product.discount > 0 && <span>{`-${product.discount}%`}</span>}
       </div>
       <h4 className="line-clamp-2">{product.title}</h4>
-      <span>₩ {product.price.toLocaleString()}</span>
+      <ProductPrice
+        originalPrice={product.price}
+        discountAmount={(product.price * product.discount) / 100}
+      />
       <Link to={`/products/${product.id}`}>{product.title}</Link>
     </div>
   );
