@@ -1,7 +1,6 @@
 .base {
   border: 1px solid black;
   border-radius: 0.4rem;
-  background-color: white;
   max-width: 28.8rem;
   width: 100%;
   padding: 0.8rem;
@@ -9,10 +8,27 @@
   font-weight: var(--body-large-weight);
 }
 
-.base:hover {
+.outlined {
+  background-color: white;
+}
+
+.filled {
   background-color: black;
   color: white;
+}
+
+.base:hover {
   transition: background-color 0.2s;
+}
+
+.outlined:hover {
+  background-color: black;
+  color: white;
+}
+
+.filled:hover {
+  background-color: white;
+  color: black;
 }
 
 @media (max-width: 768px) {

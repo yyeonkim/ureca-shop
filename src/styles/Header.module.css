@@ -3,6 +3,12 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 10;
 }
 
 .hr {
@@ -58,6 +64,10 @@ a {
 }
 
 @media (max-width: 768px) {
+  .hd {
+    padding-top: 0;
+  }
+
   .hd > i {
     display: block;
     padding: 2rem 0;

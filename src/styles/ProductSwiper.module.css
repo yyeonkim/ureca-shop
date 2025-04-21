@@ -14,7 +14,7 @@
 /* 슬라이드 hover 시 버튼 표시 */
 .similarSwiper:hover > div:nth-of-type(2),
 .similarSwiper:hover > div:last-of-type {
-  display: block;
+  display: flex;
   transition: display 0.3s;
 }
 

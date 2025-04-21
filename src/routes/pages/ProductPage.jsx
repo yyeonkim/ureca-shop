@@ -9,6 +9,7 @@ export default function ProductPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       {/* 상품 상세 */}

@@ -3,8 +3,9 @@ import useIsMobile from "@/hooks/useIsMobile.js";
 import styles from "@/styles/ProductDetail.module.css";
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
+import AddToCartModal from "./AddToCartModal.jsx";
+import AddToCartSuccessModal from "./AddToCartSuccessModal.jsx";
 import BaseButton from "./BaseButton.jsx";
-import CartModal from "./CartModal.jsx";
 import CountButton from "./CountButton.jsx";
 
 function ProductDetailSection() {
@@ -24,6 +25,10 @@ function ProductDetailSection() {
       id: product.id,
       count,
     });
+
+    if (!isMobile) {
+      setIsOpen(true);
+    }
   };
 
   useEffect(() => {
@@ -64,7 +69,11 @@ function ProductDetailSection() {
         </div>
       </section>
 
-      {isMobile && <CartModal product={product} isOpen={isOpen} onClose={() => setIsOpen(false)} />}
+      {isMobile && (
+        <AddToCartModal product={product} isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      )}
+
+      {!isMobile && <AddToCartSuccessModal isOpen={isOpen} onClose={() => setIsOpen(false)} />}
     </>
   );
 }

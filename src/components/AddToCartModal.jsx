@@ -1,11 +1,11 @@
 import { putCart } from "@/api/cart.js";
-import styles from "@/styles/CartModal.module.css";
+import styles from "@/styles/AddToCartModal.module.css";
 import { useState } from "react";
 import BaseButton from "./BaseButton.jsx";
 import CountButton from "./CountButton.jsx";
 import BaseModal from "./modal/BaseModal.jsx";
 
-function CartModal({ isOpen, onClose, product }) {
+function AddToCartModal({ isOpen, onClose, product }) {
   const [count, setCount] = useState(1);
 
   const handleAddCart = async () => {
@@ -34,10 +34,12 @@ function CartModal({ isOpen, onClose, product }) {
         >
           취소
         </BaseButton>
-        <BaseButton onClick={handleAddCart}>ADD TO CART</BaseButton>
+        <BaseButton variant="filled" onClick={handleAddCart}>
+          ADD TO CART
+        </BaseButton>
       </div>
     </BaseModal>
   );
 }
 
-export default CartModal;
+export default AddToCartModal;
