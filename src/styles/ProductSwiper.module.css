@@ -6,8 +6,16 @@
 /* swiper butons */
 .similarSwiper > div:nth-of-type(2),
 .similarSwiper > div:last-of-type {
+  display: none;
   color: var(--light-accent);
   transform: translateY(-5rem);
+}
+
+/* 슬라이드 hover 시 버튼 표시 */
+.similarSwiper:hover > div:nth-of-type(2),
+.similarSwiper:hover > div:last-of-type {
+  display: block;
+  transition: display 0.3s;
 }
 
 .similarSwiper > div:nth-of-type(2)::after,
@@ -25,5 +33,20 @@
   .similarSwiper {
     width: calc(100% + 40px);
     transform: translateX(-20px);
+  }
+
+  /* swiper-wrapper */
+  .similarSwiper > div {
+    display: flex !important;
+  }
+
+  /* 첫 번째 ProductCard */
+  .similarSwiper > div > div:first-of-type {
+    margin-left: 2rem;
+  }
+
+  /* 마지막 ProductCard */
+  .similarSwiper > div > div:last-of-type {
+    margin-right: 2rem;
   }
 }

@@ -1,8 +1,10 @@
+import styles from "@/styles/Close.module.css";
+
 function Close({ width, height, fill, className, ...restProps }) {
   return (
     <svg
       {...restProps}
-      className={`${className} bi bi-x`}
+      className={`${className} bi bi-x ${styles.close}`}
       xmlns="http://www.w3.org/2000/svg"
       width={width ?? 20}
       height={height ?? 20}
