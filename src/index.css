@@ -38,12 +38,11 @@
   --heading3-weight: 400;
   --heading4-weight: 500;
   --heading5-weight: 400;
-  --body-large-weight: 600;
+  --body-large-weight: 700;
   --body-medium-weight: 400;
   --body-small-weight: 400;
 
   font-size: 10px;
-  box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
 }
@@ -51,6 +50,7 @@
 * {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
+  box-sizing: border-box;
 }
 
 body {

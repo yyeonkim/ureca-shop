@@ -7,9 +7,18 @@ export default function CartPage() {
   const { products, cart } = useLoaderData();
   const isMobile = useIsMobile();
 
+  const calculateTotalAmount = () => {
+    return products.reduce((acc, prod) => {
+      const cartItem = cart.find((item) => item.id === prod.id);
+      return acc + prod.price * cartItem.count;
+    }, 0);
+  };
+
   return (
     <>
       <h2 className={styles.h2}>Shopping Cart</h2>
+
+      {/* 장바구니 리스트 */}
       <ul className={styles.ul}>
         {products.map((prod) => {
           const cartItem = cart.find((item) => item.id === prod.id);
@@ -21,6 +30,12 @@ export default function CartPage() {
           );
         })}
       </ul>
+
+      {/* 총 금액 */}
+      <div className={styles.totalAmount}>
+        <strong>TOTAL</strong>
+        <span>₩ {calculateTotalAmount().toLocaleString()}</span>
+      </div>
     </>
   );
 }

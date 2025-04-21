@@ -18,11 +18,19 @@
   border-top: 1px solid var(--light-gray);
 }
 
+.totalAmount {
+  font-size: var(--body-large-size);
+  font-weight: var(--body-large-weight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4.2rem;
+}
+
 @media (max-width: 768px) {
   .h2 {
     font-size: var(--heading5-size);
     font-weight: var(--heading5-weight);
-
     text-align: left;
     margin-top: 0rem;
     margin-bottom: 1.6rem;
