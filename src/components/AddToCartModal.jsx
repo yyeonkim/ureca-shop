@@ -32,7 +32,7 @@ function AddToCartModal({ isOpen, onClose, product }) {
             setCount(1);
           }}
         >
-          취소
+          CANCEL
         </BaseButton>
         <BaseButton variant="filled" onClick={handleAddCart}>
           ADD TO CART

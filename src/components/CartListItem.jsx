@@ -2,15 +2,17 @@ import Close from "@/assets/Close.jsx";
 import useIsMobile from "@/hooks/useIsMobile.js";
 import styles from "@/styles/CartListItem.module.css";
 import { memo } from "react";
+import { Link } from "react-router";
 import CountButton from "./CountButton.jsx";
 
-function CartListItem({ product, count, onChangeCount }) {
+function CartListItem({ product, count, onChangeCount, onClickDelete }) {
   const isMobile = useIsMobile();
 
   return (
     <li className={styles.list}>
       <div>
         <img src={`/products/${product.img}`} alt={product.title} />
+        <Link to={`/products/${product.id}`}>{product.title}</Link>
       </div>
 
       <div>
@@ -18,14 +20,20 @@ function CartListItem({ product, count, onChangeCount }) {
           <h3 className="line-clamp-2">{product.title}</h3>
           <span className={styles.price}>₩ {product.price.toLocaleString()}</span>
         </div>
-        <CountButton count={count} onChangeCount={onChangeCount} />
+        <CountButton count={count} onChangeCount={(cnt) => onChangeCount(cnt, product.id)} />
       </div>
 
-      <Close width={isMobile ? 20 : 24} height={isMobile ? 20 : 24} />
+      {/* 삭제 버튼 */}
+      <Close
+        width={isMobile ? 20 : 24}
+        height={isMobile ? 20 : 24}
+        onClick={() => onClickDelete(product.id)}
+      />
     </li>
   );
 }
 
+// id, count가 동일하면 메모
 export default memo(
   CartListItem,
   (oldProps, newProps) =>

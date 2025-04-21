@@ -11,9 +11,9 @@ function AddToCartSuccessModal({ isOpen, onClose }) {
       <h3>장바구니에 담았습니다.</h3>
 
       <div>
-        <BaseButton onClick={onClose}>계속 담기</BaseButton>
+        <BaseButton onClick={onClose}>Keep Shopping</BaseButton>
         <BaseButton variant="filled" onClick={() => navigate("/cart")}>
-          장바구니 가기
+          View Cart
         </BaseButton>
       </div>
     </BaseModal>

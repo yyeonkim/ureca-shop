@@ -39,4 +39,8 @@
   .ul {
     gap: 2.4rem;
   }
+
+  .hr {
+    display: none;
+  }
 }

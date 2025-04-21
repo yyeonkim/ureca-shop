@@ -15,7 +15,6 @@
 .similarSwiper:hover > div:nth-of-type(2),
 .similarSwiper:hover > div:last-of-type {
   display: flex;
-  transition: display 0.3s;
 }
 
 .similarSwiper > div:nth-of-type(2)::after,
