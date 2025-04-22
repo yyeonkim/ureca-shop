@@ -13,10 +13,13 @@
 .filters {
   max-width: 26.2rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
 }
 
-.filters .category {
-  margin-bottom: 1.6rem;
+.products {
+  width: 100%;
 }
 
 .products .list {
@@ -28,14 +31,28 @@
 }
 
 @media (max-width: 768px) {
+  .h2 {
+    font-size: var(--heading3-size);
+    font-weight: var(--heading3-weight);
+    margin-top: 2.4rem;
+    margin-bottom: 1.6rem;
+  }
+
   .shop {
     flex-direction: column;
+    gap: 1.6rem;
   }
 
   .products .list {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 1.6rem;
     column-gap: 2.4rem;
-    margin-bottom: 6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .filters {
+    gap: 1rem;
+    margin-bottom: 1rem;
+    max-width: none;
   }
 }

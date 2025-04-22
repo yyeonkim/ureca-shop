@@ -1,7 +1,7 @@
 import useIsMobile from "@/hooks/useIsMobile.js";
 import styles from "@/styles/Pagination.module.css";
 
-function Pagination({ currentPage, totalPages, onPageChange, className }) {
+function Pagination({ currentPage, totalPages, onPageChange }) {
   const isMobile = useIsMobile();
 
   const handlePageChange = (page) => {
@@ -11,7 +11,7 @@ function Pagination({ currentPage, totalPages, onPageChange, className }) {
   };
 
   return (
-    <div className={`${styles.pagination} ${className}`}>
+    <div className={styles.pagination}>
       <button
         type="button"
         onClick={() => handlePageChange(currentPage - 1)}

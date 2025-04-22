@@ -1,6 +1,7 @@
 import Dropdown from "@/components/Dropdown.jsx";
 import Pagination from "@/components/Pagination.jsx";
 import ProductCard from "@/components/ProductCard.jsx";
+import ProductCardSkeleton from "@/components/ProductCardSkeleton.jsx";
 import useGetProducts from "@/hooks/useGetProducts.js";
 import styles from "@/styles/Shop.module.css";
 import { getKeyByValue } from "@/utils/object.js";
@@ -43,8 +44,6 @@ export default function ShopPage() {
 
   useEffect(() => setParams("_page", 1), []);
 
-  if (isLoading) return <p>Loading...</p>;
-
   return (
     <>
       <h2 className={styles.h2}>Shop The Latest</h2>
@@ -61,6 +60,7 @@ export default function ShopPage() {
             onOptionSelect={(option) => {
               const category = getKeyByValue(categories, option);
               setParams("category", category);
+              setIsOpenCategory(false);
             }}
             isOpen={isOpenCategory}
             toggle={() => setIsOpenCategory(!isOpenCategory)}
@@ -73,6 +73,7 @@ export default function ShopPage() {
             onOptionSelect={(option) => {
               const _sort = getKeyByValue(sortBy, option);
               setParams("_sort", _sort);
+              setIsOpenSort(false);
             }}
             isOpen={isOpenSort}
             toggle={() => setIsOpenSort(!isOpenSort)}
@@ -82,12 +83,14 @@ export default function ShopPage() {
         {/* product list */}
         <section className={styles.products}>
           <div className={styles.list}>
-            {products.data.map((item) => (
-              <ProductCard key={`prod-${item.id}`} product={item} />
-            ))}
+            {isLoading
+              ? Array(6)
+                  .fill(0)
+                  .map((_, i) => <ProductCardSkeleton key={`skeleton-${i}`} />)
+              : products.data.map((item) => <ProductCard key={`prod-${item.id}`} product={item} />)}
           </div>
           <Pagination
-            currentPage={searchParams.get("_page")}
+            currentPage={Number(searchParams.get("_page"))}
             totalPages={products.pages}
             onPageChange={handlePageChange}
           />
