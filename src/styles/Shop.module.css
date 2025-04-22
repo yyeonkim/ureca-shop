@@ -19,9 +19,23 @@
   margin-bottom: 1.6rem;
 }
 
-.list {
+.products .list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 2.4rem;
   column-gap: 7rem;
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 768px) {
+  .shop {
+    flex-direction: column;
+  }
+
+  .products .list {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.6rem;
+    column-gap: 2.4rem;
+    margin-bottom: 6rem;
+  }
 }

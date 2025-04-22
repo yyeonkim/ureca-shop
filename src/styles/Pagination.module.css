@@ -1,0 +1,29 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.pagination > * {
+  font-size: var(--body-medium-size);
+  font-weight: var(--body-medium-weight);
+}
+
+.pagination > button {
+  border: 1px solid var(--light-gray);
+  border-radius: 0.4rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.pagination button.active {
+  border-color: black;
+  background-color: black;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

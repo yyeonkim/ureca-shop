@@ -18,6 +18,16 @@
   padding: 1.6rem 1.2rem;
 }
 
+.dropdown button p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.dropdown button span {
+  color: var(--light-accent);
+}
+
 .dropdown button i {
   font-size: 2rem;
 }

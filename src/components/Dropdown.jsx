@@ -11,11 +11,11 @@ function Dropdown({ label, options, selectedOption, onOptionSelect, isOpen, togg
           <p>
             {label} <span>{selectedOption}</span>
           </p>
-          <i class="bi bi-chevron-down"></i>
+          <i className="bi bi-chevron-down" />
         </button>
         <ul className={isOpen ? styles.open : ""}>
           {options.map((option, index) => (
-            <li tabindex={index} onClick={onOptionSelect}>
+            <li tabindex={index} onClick={() => onOptionSelect(option)}>
               {option}
             </li>
           ))}
