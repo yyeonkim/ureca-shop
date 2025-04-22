@@ -22,7 +22,7 @@ export default function ShopPage() {
 
   const { data: products, isLoading } = useGetProducts({
     params: {
-      _page: searchParams.get("_page"),
+      _page: searchParams.get("_page") ?? 1,
       _per_page: 6,
       category: searchParams.get("category"),
       _sort: searchParams.get("_sort"),
@@ -90,7 +90,7 @@ export default function ShopPage() {
               : products.data.map((item) => <ProductCard key={`prod-${item.id}`} product={item} />)}
           </div>
           <Pagination
-            currentPage={Number(searchParams.get("_page"))}
+            currentPage={Number(searchParams.get("_page") ?? 1)}
             totalPages={products.pages}
             onPageChange={handlePageChange}
           />
