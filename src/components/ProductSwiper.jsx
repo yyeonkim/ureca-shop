@@ -6,6 +6,9 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ProductCard from "./ProductCard.jsx";
 
+const CUSTOM_MAX_TRANSLATE = -3698;
+const DEFAULT_MAX_TRANSLATE = -3658;
+
 function ProductSwiper() {
   const { product } = useLoaderData();
   const isMobile = useIsMobile();
@@ -16,11 +19,16 @@ function ProductSwiper() {
 
   return (
     <Swiper
+      className={styles.similarSwiper}
       navigation={isMobile ? false : true}
       slidesPerView={isMobile ? 2.4 : 3}
       spaceBetween={isMobile ? 12 : 54}
       modules={[Navigation]}
-      className={styles.similarSwiper}
+      onSlideChange={(swiper) => {
+        if (swiper.translate <= DEFAULT_MAX_TRANSLATE) {
+          swiper.setTranslate(CUSTOM_MAX_TRANSLATE);
+        }
+      }}
     >
       {!isLoading &&
         similarProds.map((item) => (
