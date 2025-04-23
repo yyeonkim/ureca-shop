@@ -15,7 +15,7 @@
   border-bottom: 1px solid var(--light-gray);
 }
 
-.hd > i {
+.hd .mobile {
   display: none;
 }
 
@@ -65,12 +65,16 @@ a {
 
 @media (max-width: 768px) {
   .hd {
-    padding-top: 0;
+    padding: 2rem 0;
   }
 
-  .hd > i {
-    display: block;
-    padding: 2rem 0;
+  .hd .mobile {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hd .mobile > i {
     font-size: 2rem;
     cursor: pointer;
   }
@@ -87,7 +91,7 @@ a {
   .gnb {
     position: fixed;
     inset: 0;
-    top: 10rem;
+    top: 6.7rem;
     background-color: white;
     flex-direction: column;
     z-index: 10;

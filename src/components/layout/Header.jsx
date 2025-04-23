@@ -1,3 +1,4 @@
+import useControlScroll from "@/hooks/useControlScroll.js";
 import styles from "@/styles/Header.module.css";
 import throttle from "@/utils/throttle.js";
 import { useEffect, useState } from "react";
@@ -8,6 +9,8 @@ const linkClassName = ({ isActive }) => (isActive ? styles.active : "");
 function Header() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+
+  useControlScroll(isOpen);
 
   useEffect(() => {
     // 브라우저 주소가 바뀌면 사이드 네비게이션 닫기
@@ -27,12 +30,6 @@ function Header() {
     };
   }, []);
 
-  useEffect(() => {
-    // 스크롤 제어
-    if (isOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "visible";
-  }, [isOpen]);
-
   return (
     <header className={`${styles.hd} ${location.pathname === "/" ? "" : styles.hr} mw`}>
       <h1>
@@ -41,11 +38,7 @@ function Header() {
         </NavLink>
       </h1>
 
-      <nav
-        id="mainNavigation"
-        className={`${styles.gnb} ${isOpen && styles.open}`}
-        aria-expanded={isOpen}
-      >
+      <nav id="mainNavigation" className={`${styles.gnb} ${isOpen && styles.open}`}>
         {isOpen && <MainNavLink to="/">Home</MainNavLink>}
         <MainNavLink to="/shop">Shop</MainNavLink>
         <MainNavLink to="/blog">Blog</MainNavLink>
@@ -67,25 +60,30 @@ function Header() {
         </MainNavLink>
       </nav>
 
-      {isOpen ? (
-        // 닫기 아이콘
-        <i
-          className="bi bi-x-lg"
-          aria-label="메뉴 닫기"
-          aria-controls="mainNavigation"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen(false)}
-        />
-      ) : (
-        // 햄버거 아이콘
-        <i
-          className={`bi bi-list ${styles.hamburger}`}
-          aria-label="메뉴 열기"
-          aria-controls="mainNavigation"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen(true)}
-        />
-      )}
+      <div className={styles.mobile}>
+        <MainNavLink to="/cart" aria-label="장바구니 가기">
+          <i className="bi bi-cart" />
+        </MainNavLink>
+        {isOpen ? (
+          // 닫기 아이콘
+          <i
+            className="bi bi-x-lg"
+            aria-label="메뉴 닫기"
+            aria-controls="mainNavigation"
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen(false)}
+          />
+        ) : (
+          // 햄버거 아이콘
+          <i
+            className={`bi bi-list ${styles.hamburger}`}
+            aria-label="메뉴 열기"
+            aria-controls="mainNavigation"
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen(true)}
+          />
+        )}
+      </div>
     </header>
   );
 }
