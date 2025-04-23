@@ -1,15 +1,11 @@
 import ProductDetailSection from "@/components/ProductDetailSection.jsx";
 import ProductTabList from "@/components/ProductTabList.jsx";
 import styles from "@/styles/Product.module.css";
-import { lazy, useEffect } from "react";
+import { lazy } from "react";
 
 const ProductSwiper = lazy(() => import("@/components/ProductSwiper.jsx"));
 
 export default function ProductPage() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <>
       {/* 상품 상세 */}

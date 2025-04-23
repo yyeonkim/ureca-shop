@@ -24,14 +24,7 @@ function ProductSwiper() {
     >
       {!isLoading &&
         similarProds.map((item) => (
-          <SwiperSlide
-            onClick={() =>
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              })
-            }
-          >
+          <SwiperSlide>
             <ProductCard key={item.id} className={styles.prodCard} product={item} />
           </SwiperSlide>
         ))}

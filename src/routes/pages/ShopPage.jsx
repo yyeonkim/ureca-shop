@@ -31,10 +31,6 @@ export default function ShopPage() {
 
   const handlePageChange = (page) => {
     setParams("_page", page);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
   };
 
   const setParams = (key, value) => {

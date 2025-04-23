@@ -1,5 +1,5 @@
 import styles from "@/styles/Layout.module.css";
-import { Outlet } from "react-router";
+import { Outlet, ScrollRestoration } from "react-router";
 import Footer from "./Footer.jsx";
 import Header from "./Header.jsx";
 
@@ -11,6 +11,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <ScrollRestoration scrollBehavior="smooth" />
     </>
   );
 }
