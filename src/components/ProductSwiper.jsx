@@ -25,7 +25,7 @@ function ProductSwiper() {
       spaceBetween={isMobile ? 12 : 54}
       modules={[Navigation]}
       onSlideChange={(swiper) => {
-        if (swiper.translate <= DEFAULT_MAX_TRANSLATE) {
+        if (isMobile && swiper.translate <= DEFAULT_MAX_TRANSLATE) {
           swiper.setTranslate(CUSTOM_MAX_TRANSLATE);
         }
       }}
